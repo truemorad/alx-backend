@@ -1,13 +1,14 @@
 import {createClient} from 'redis';
 import {createQueue} from 'kue';
 import {promisify} from 'util';
-import {express} from 'express';
+import express from 'express';
 
 const app = express();
 const client = createClient();
 const queue = createQueue();
 const HOST = '127.0.0.1';
 const PORT = 1245;
+let number = 50;
 let reservationEnabled = true;
 
 // Redis client ops
